@@ -1,13 +1,292 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="" href="" />
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title></title>
+
+    <title>WaveLength</title>
+
+    <meta name="description" content="welcome page">
+    <meta name="keywords" content="blogs about programming, it trends for developers, how to stay updated in it">
+    <meta name="author" content="WaveLength">
+
+    <!-- This is taken from google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap" rel="stylesheet">
+    
+    <!-- Fav Icon -->
+    <link rel="icon" type="image/icon" href="src/assets/images/tower-broadcast-solid.svg"/>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="src/assets/styles/style.css">
+    
+    <!-- Fontawesome -->
+    <script src="https://kit.fontawesome.com/49c1127b94.js" crossorigin="anonymous"></script>
+
+    <!-- JS -->
+     <script src="src/components/carousel.js" defer></script> <!-- carousel -->
   </head>
 
   <body>
+    <header>
+      <nav class="loggedOut-nav">
 
+        <!-- Logo -->
+        <a class="navlogo" href="index.html" aria-label="home page">
+          <span><h3>wave</h3></span>
+          <span class="logo-icon"><i class="fa-solid fa-tower-broadcast"></i></span>
+          <span class="logo-right-side"><h3>length</h3></span>
+        </a>
+
+        <ul>
+          <!-- Log In btn -->
+          <li>
+            <a href="login.html" aria-label="log in">
+              <button class="sec-btn">log in</button>
+            </a>
+          </li>
+
+          <!--Sign Up btn-->
+          <li>
+            <a href="signUp.html" aria-label="sign up new account">
+              <button class="pri-btn">sign up</button>
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <!-- CAROUSEL - START -->
+      <section class="carousel-section" aria-label="newest blog posts">
+
+        <article id="js-carousel">
+          <!-- Carousel Btns - Previous -->
+          <button class="carousel-arrow-btns left">
+            <i class="fa-solid fa-arrow-left"></i>
+          </button>
+
+          <!-- SLIDE 1 -->
+          <div class="slide active">
+            <!-- Image -->
+            <a class="slide-img" href="#" aria-label="takes you to specific blog post">
+              <img src="src/assets/images/Logo_1.png" alt="blog post img">
+            </a>
+
+            <!-- Info -->
+            <div class="slide-info">
+              <h1>title</h1>
+              <h2>author</h2>
+              <h3>date when written</h3>
+              <h4>content</h4>
+              
+              <!-- Read Btn -->
+              <button class="pri-btn">read more</button>
+            </div>
+          </div>
+
+          <!-- SLIDE 2 -->
+          <div class="slide">
+            <!-- Image -->
+            <a class="slide-img" href="#" aria-label="takes you to specific blog post">
+              <img src="src/assets/images/Logo_2.png" alt="blog post img">
+            </a>
+
+            <!-- Info -->
+            <div class="slide-info">
+              <h1>title</h1>
+              <h2>author</h2>
+              <h3>date when written</h3>
+              <h4>content</h4>
+              
+              <!-- Read Btn -->
+              <button class="pri-btn">read more</button>
+            </div>
+          </div>
+
+
+          <!-- SLIDE 3 -->
+          <div class="slide">
+            <!-- Image -->
+            <a class="slide-img" href="#" aria-label="takes you to specific blog post">
+              <img src="src/assets/images/Logo_1.png" alt="blog post img">
+            </a>
+
+            <!-- Info -->
+            <div class="slide-info">
+              <h1>title</h1>
+              <h2>author</h2>
+              <h3>date when written</h3>
+              <h4>content</h4>
+
+              <!-- Read Btn -->
+              <button class="pri-btn">read more</button>
+            </div>
+          </div>
+
+          <!-- Carousel Btns - Next -->
+          <button class="carousel-arrow-btns right">
+            <i class="fa-solid fa-arrow-right"></i>
+          </button>
+        </article>
+
+        <article class="carousel-nav">
+          <button class="carousel-indicator active"></button>
+          <button class="carousel-indicator"></button>
+          <button class="carousel-indicator"></button>
+        </article>
+      </section>
+      <!-- CAROUSEL - END -->
+
+
+      <!-- CATEGORY - START -->
+      <section class="categories" aria-label="popular categories from the blog">
+        <article class="cat-container">
+          <div class="cat-title"><h2>popular categories</h2></div>
+
+          <div class="cat-list">
+            <div class="category">
+              <h3>design</h3>
+            </div>
+  
+            <div class="category">
+              <h3>technology</h3>
+            </div>
+  
+            <div class="category">
+              <h3>something</h3>
+            </div>
+          </div>
+        </article>
+      </section>
+      <!-- CATEGORY END -->
+
+
+      <!-- ABOUT START -->
+      <section class="about-section" aria-label="info about company">
+        <article class="about-us">
+          <img class="about-img" src="src/assets/images/Logo_2.png" alt="profile-img">
+
+          <div class="about-text">
+            <h4>Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+            Dolorem maiores exercitationem voluptatibus, beatae repellat 
+            doloremque necessitatibus voluptatum cumque quos ipsam asperiores 
+            ducimus veniam eos iure sunt! Eveniet ea atque voluptatem?</h4>
+            <button class="pri-btn">read more</button>
+          </div>
+        </article>
+      </section>
+      <!-- ABOUT END -->
+
+
+      <!-- NEWSLETTER START -->
+      <section class="newsletter-section" aria-label="get newsletters">
+        <article class="newsletters">
+          <div class="news-img">
+            <i class="fa-solid fa-envelope-open-text"></i>
+          </div>
+
+          <div class="news-title">
+            <span><h3>stay updated every month!</h3></span>
+          </div>
+
+          <form action="#">
+            <div class="news-form-box">
+              <input type="text" name="emailAdress" placeholder="enter email">
+              <button class="pri-btn">submit</button>
+            </div>
+          </form>
+        </article>
+      </section>
+      <!-- NEWSLETTER END -->
+    </main>
+
+    <!-- FOOTER START -->
+    <footer class="footer-section" aria-label="footer">
+      <article class="footer-container">
+        <div class="footer-logos">
+          <img src="src/assets/images/Logo_1.png" alt="logo-image">
+
+          <div class="footer-social-media">
+            <ul>
+              <li>
+                <a href="#" aria-label="github"><i class="fa-brands fa-github"></i></a>
+              </li>
+              <li>
+                <a href="#" aria-label="bluesky"><i class="fa-brands fa-bluesky"></i></a>
+              </li>
+              <li>
+                <a href="#" aria-label="linkedin"><i class="fa-brands fa-linkedin-in"></i></a>
+              </li>
+              <li>
+                <a href="#"></a>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="footer-links">
+          <!-- Contact links -->
+          <div>
+            <h5>company</h5>
+            <ul>
+              <li>
+                <a href="#">about us</a>
+              </li>
+              <li>
+                <a href="#">contact us</a>
+              </li>
+              <li>
+                <a href="#">careers</a>
+              </li>
+              <li>
+                <a href="#">our team</a>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Categories links -->
+          <div>
+            <h5>categories</h5>
+            <ul>
+              <li>
+                <a href="#">design</a>
+              </li>
+              <li>
+                <a href="#">programming</a>
+              </li>
+              <li>
+                <a href="#">technology</a>
+              </li>
+            </ul>
+          </div>
+          
+          <!-- Legal links -->
+          <div>
+            <h5>legal</h5>
+            <ul>
+              <li>
+                <a href="#">privacy policy</a>
+              </li>
+              <li>
+                <a href="#">terms of use</a>
+              </li>
+              <li>
+                <a href="#">cookie policy</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </article>
+
+      <hr>
+
+      <article>
+        <h6>© 2025 WaveLength. All rights reserved.</h6>
+      </article>
+    </footer>
+    <!-- FOOTER END -->
   </body>
 </html>
