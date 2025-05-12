@@ -1,5 +1,6 @@
-@import "./base.css";
+@import "./base.css"; /*typography, colors, etc*/
 @import "./buttons.css";
+@import "./authentication.css"; /*log in, sign up pages*/
 @import "./nav.css";
 @import "./index.css";
 @import "./carousel.css";
@@ -19,22 +20,3 @@ body{
   min-height: 100dvh;
   background-color: var(--color-light-bg);
 }
-
-/*Sign Up - Start*/
-.sign-up-title{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: 50px 0 1rem;
-  text-transform: capitalize;
-}
-
-.sign-up{
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 1rem;
-  text-transform: capitalize;
-}
-/*Sign Up - End*/

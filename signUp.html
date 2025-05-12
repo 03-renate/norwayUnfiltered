@@ -26,46 +26,48 @@
     <script src="https://kit.fontawesome.com/49c1127b94.js" crossorigin="anonymous"></script>
 
     <!-- JS -->
-    <script src="src/components/carousel.js" defer></script> <!-- carousel -->
   </head>
 
-  <body>
-    <header class="sign-up-title"><h1>sign up</h1></header>
+  <body class="auth-body">
     <main class="sign-up">
-        <form class="user-form" action="#">
-          <!-- username -->
-          <div>
-            <label for="uname"><i class="fa-regular fa-user"></i></label>
-            <input type="text" name="firstname" id="uname" placeholder="name">
+      <div>
+        <div id="signup-form" class="auth-form-container">
+          <h2>sign up</h2>
+
+          <form action="#" id="signup">
+            <!-- username -->
+            <div>
+              <label for="uname"><i class="fa-regular fa-user"></i></label>
+              <input type="text" name="firstname" id="uname" placeholder="name">
+            </div>
+
+            <!-- email -->
+            <div>
+              <label for="email"><i class="fa-regular fa-envelope"></i></label>
+              <input required type="email" name="email" id="email" placeholder="@noroff.stud.no">
+            </div>
+
+            <!-- password -->
+            <div>
+              <label for="pwrd"><i class="fa-solid fa-lock"></i></label>
+              <input type="password" name="password" id="pwrd" placeholder="password">
+            </div>
+
+            <!-- confirm password -->
+            <div>
+              <label for="cfrm-pwrd"><i class="fa-solid fa-lock"></i></label>
+              <input type="password" name="confirm password" id="cfrm-pwrd" placeholder="confirm password">
+            </div>
+          </form>
+
+          <div class="auth-form-footer">
+            <p>already have an account?</p>
+            <a href="login.html">login</a>
           </div>
 
-          <!-- email -->
-          <div>
-            <label for="email"><i class="fa-regular fa-envelope"></i></label>
-            <input required type="email" name="email" id="email" placeholder="@noroff.stud.no">
-          </div>
-
-          <!-- password -->
-          <div>
-            <label for="pwrd"><i class="fa-solid fa-lock"></i></label>
-            <input type="password" name="password" id="pwrd" placeholder="password">
-          </div>
-
-          <!-- confirm password -->
-          <div>
-            <label for="cfrm-pwrd"><i class="fa-solid fa-lock"></i></label>
-            <input type="password" name="confirm password" id="cfrm-pwrd" placeholder="confirm password">
-          </div>
-        </form>
-
-        <div>
-          <p>already have an account?</p>
-          <a href="login.html">login</a>
-        </div>
-
-        <div class="btn-container">
           <button type="submit" class="pri-btn">sign up</button>
         </div>
+      </div>
     </main>
   </body>
 </html>
