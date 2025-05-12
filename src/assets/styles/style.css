@@ -1,6 +1,7 @@
 @import "./base.css";
 @import "./buttons.css";
 @import "./nav.css";
+@import "./index.css";
 @import "./carousel.css";
 @import "./footer.css";
 
@@ -27,6 +28,7 @@ body{
   margin: 50px 0 1rem;
   text-transform: capitalize;
 }
+
 .sign-up{
   display: flex;
   flex-direction: column;
@@ -36,128 +38,3 @@ body{
   text-transform: capitalize;
 }
 /*Sign Up - End*/
-
-/*CATEGORY - Start*/
-.categories{
-  width: 100%;
-  margin-top: 50px;
-}
-
-.cat-title{
-  display: flex;
-  justify-content: start;
-  padding-left: 20px;
-  text-transform: capitalize;
-}
-
-.cat-list{
-  width: 100%;
-  min-height: 200px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 5rem;
-  background-color: var(--color-sec-bg);
-}
-
-.category{
-  text-transform: capitalize;
-}
-/*CATEGORY - End*/
-
-
-/*ABOUT - Start*/
-.about-section{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.about-us{
-  width: 90%;
-  margin-top: 50px;
-  padding: 20px;
-  gap: 1rem;
-  border-radius: var(--border-radius);
-  box-shadow: var(--box-shadow-base);
-  background-color: var(--color-card-bg);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
-
-.about-img{
-  height: 150px;
-  width: 150px;
-  border-radius: 50%;
-  border: 2px solid black;
-}
-
-.about-img img{
-  width: 100%;
-  object-fit: cover;
-  object-position: center;
-}
-
-.about-text{
-  width: 80%;
-}
-/*ABOUT - End*/
-
-
-/*NEWSLETTER - Start*/
-.newsletter-section{
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-top: 50px;
-  height: 300px;
-  background-color: var(--color-sec-bg);
-}
-
-.newsletters{
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
-
-.news-img{
-  border: 2px solid black;
-  width: 120px;
-  height: 120px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 10px;
-  border-radius: 100%;
-}
-
-.news-img i{
-  font-size: var(--font-size-h2);
-}
-
-.news-title{
-  margin-top: 10px;
-  text-transform: capitalize;
-}
-
-.news-form-box{
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 0.5rem;
-  margin-top: 15px;
-}
-
-.news-form-box input{
-  height: 40px;
-  max-width: auto;
-  padding-left: 10px;
-  border: none;
-  border-radius: var(--border-radius);
-  box-shadow: var(--box-shadow-base);
-  text-transform: capitalize;
-}
-/*NEWSLETTER - End*/
