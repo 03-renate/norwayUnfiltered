@@ -20,6 +20,7 @@ coding2go, link; https://www.youtube.com/watch?v=bVl5_UdcAy0&t=141s
   gap: 3rem;
   border-radius: var(--border-radius);
   text-transform: capitalize;
+  background-color: var(--color-card-bg);
   box-shadow: var(--box-shadow-base);
 }
 

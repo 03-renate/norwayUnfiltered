@@ -16,25 +16,6 @@ function createFooter() {
     footer.id = 'footer';
     footer.className = 'footer';
     footer.innerHTML = `
-        <article class="footer-container">
-            <div class="footer-logos">
-                <img src="src/assets/images/Logo_1.png" alt="logo-image">
-
-                <div class="footer-social-media">
-                    <ul>
-                        <li>
-                            <a href="#" aria-label="github"><i class="fa-brands fa-github"></i></a>
-                        </li>
-                        <li>
-                            <a href="#" aria-label="bluesky"><i class="fa-brands fa-bluesky"></i></a>
-                        </li>
-                        <li>
-                            <a href="#" aria-label="linkedin"><i class="fa-brands fa-linkedin-in"></i></a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-
             <div class="footer-links">
                 <div>
                     <h5>company</h5>
@@ -58,13 +39,16 @@ function createFooter() {
                     <h5>categories</h5>
                     <ul>
                         <li>
-                            <a href="#">design</a>
+                            <a href="#">spring</a>
                         </li>
                         <li>
-                            <a href="#">programming</a>
+                            <a href="#">summer</a>
                         </li>
                         <li>
-                            <a href="#">technology</a>
+                            <a href="#">autumn</a>
+                        </li>
+                        <li>
+                            <a href="#">winter</a>
                         </li>
                     </ul>
                 </div>
@@ -89,7 +73,7 @@ function createFooter() {
       <hr>
 
       <article>
-        <h6>© 2025 WaveLength. All rights reserved.</h6>
+        <h6>© 2025 NorwayUnfiltered. All rights reserved.</h6>
       </article>`;
 
       return footer;

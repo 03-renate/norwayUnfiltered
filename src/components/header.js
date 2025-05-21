@@ -17,9 +17,9 @@ function createHeader() {
     nav.className = 'nav';
     nav.innerHTML = `
         <a class="navlogo" href="index.html" aria-label="home page">
-          <span><h3>wave</h3></span>
-          <span class="logo-icon"><i class="fa-solid fa-tower-broadcast"></i></span>
-          <span class="logo-right-side"><h3>length</h3></span>
+          <span class="logo-icon"><i class="fa-solid fa-comments"></i></span>
+          <span><h3>norway</h3></span>
+          <span class="logo-right-side"><h3>unfiltered</h3></span>
         </a>
 
         <ul>

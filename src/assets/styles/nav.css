@@ -10,9 +10,10 @@
     top: 0;
     left: 0;
     background-color: var(--color-light-bg);
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.35);
+    box-shadow: var(--box-shadow-base);
     z-index: 10;
   }
+  
   
   .nav ul{
     display: flex;

@@ -2,16 +2,16 @@
 
 :root {
   /*colors*/
-  --color-button: #1EAEDB;
-  --color-card-bg: #ffff;
+  --color-button: #EF6860;
+  --color-card-bg: #FFF6EB;
 
 
-  --color-pri-text: #403E43;
-  --color-sec-text: #9B87F5;
-  --color-ter-text: #7E69AB;
-  --color-light-bg: #F1F0FB;
-  --color-sec-bg: #E0DFF6;
-  --color-dark-bg: #100D30;
+  --color-pri-text: #1F110A;
+  --color-sec-text: #FAC9AE;
+  --color-ter-text: #EF6860;
+  --color-light-bg: #FFE5D4;
+  --color-sec-bg: #AF8D79;
+  --color-dark-bg: #53392B;
 
 
   /*typography*/
@@ -49,8 +49,8 @@
   --border-radius: 10px;
 
   /*Shadow*/
-    --box-shadow-base: 0 2px 5px rgba(0, 0, 0, 0.2);
-    --box-shadow-hover: 0 4px 8px rgba(0, 0, 0, 0.2);
+    --box-shadow-base: 0 2px 5px #53392b3d;
+    --box-shadow-hover: 0 4px 8px #53392b64;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -64,6 +64,8 @@ h1 {
   font-size: var(--font-size-h1);
   line-height: var(--font-line-height-h1);
   letter-spacing: var(--font-letter-space-h1);
+  color: var(--color-pri-text);
+  text-transform: capitalize;
 }
 
 h2 {
@@ -71,6 +73,8 @@ h2 {
   font-size: var(--font-size-h2);
   line-height: var(--font-line-height-h2);
   letter-spacing: var(--font-letter-space-h2);
+  color: var(--color-pri-text);
+  text-transform: capitalize;
 }
 
 h3 {
@@ -78,6 +82,8 @@ h3 {
   font-size: var(--font-size-h3);
   line-height: var(--font-line-height-h3);
   letter-spacing: var(--font-letter-space-h3);
+  color: var(--color-pri-text);
+  text-transform: capitalize;
 }
 
 h4 {
@@ -85,6 +91,8 @@ h4 {
   font-size: var(--font-size-h4);
   line-height: var(--font-line-height-h4);
   letter-spacing: var(--font-letter-space-h4);
+  color: var(--color-pri-text);
+  text-transform: capitalize;
 }
 
 h5 {
@@ -108,6 +116,7 @@ p {
   font-size: var(--font-size-body);
   line-height: var(--font-line-height-body);
   letter-spacing: var(--font-letter-space-body);
+  color: var(--color-pri-text);
 }
 
 a {

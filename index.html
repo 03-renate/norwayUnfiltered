@@ -5,7 +5,7 @@
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <title>WaveLength</title>
+    <title>NorwayUnfiltered</title>
 
     <meta name="description" content="welcome page">
     <meta name="keywords" content="blogs about programming, it trends for developers, how to stay updated in it">
@@ -17,7 +17,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap" rel="stylesheet">
     
     <!-- Fav Icon -->
-    <link rel="icon" type="image/icon" href="src/assets/images/tower-broadcast-solid.svg"/>
+    <link rel="icon" type="image/icon" href="src/assets/images/comments-regular.svg"/>
 
     <!-- CSS -->
     <link rel="stylesheet" href="src/assets/styles/style.css">
@@ -26,9 +26,12 @@
     <script src="https://kit.fontawesome.com/49c1127b94.js" crossorigin="anonymous"></script>
 
     <!-- JS -->
-     <script src="src/components/carousel.js" defer></script> <!-- carousel -->
+     <script type="module" src="src/main.js" defer></script> <!-- main -->
+     <script type="module" src="src/components/carousel.js" defer></script> <!-- carousel -->
+     <script type="module" src="src/components/pagination.js" defer></script> <!-- pagination -->
      <script src="src/components/header.js" defer></script> <!-- navbar -->
      <script src="src/components/footer.js" defer></script> <!-- footer -->
+     <script type="module" src="src/utils.js" defer></script> <!-- utils -->
   </head>
 
   <body>
@@ -46,63 +49,8 @@
             <i class="fa-solid fa-arrow-left"></i>
           </button>
 
-          <!-- SLIDE 1 -->
-          <div class="slide active">
-            <!-- Image -->
-            <a class="slide-img" href="#" aria-label="takes you to specific blog post">
-              <img src="src/assets/images/Logo_1.png" alt="blog post img">
-            </a>
-
-            <!-- Info -->
-            <div class="slide-info">
-              <h1>title</h1>
-              <h2>author</h2>
-              <h3>date when written</h3>
-              <h4>content</h4>
-              
-              <!-- Read Btn -->
-              <button class="pri-btn">read more</button>
-            </div>
-          </div>
-
-          <!-- SLIDE 2 -->
-          <div class="slide">
-            <!-- Image -->
-            <a class="slide-img" href="#" aria-label="takes you to specific blog post">
-              <img src="src/assets/images/Logo_2.png" alt="blog post img">
-            </a>
-
-            <!-- Info -->
-            <div class="slide-info">
-              <h1>title</h1>
-              <h2>author</h2>
-              <h3>date when written</h3>
-              <h4>content</h4>
-              
-              <!-- Read Btn -->
-              <button class="pri-btn">read more</button>
-            </div>
-          </div>
-
-
-          <!-- SLIDE 3 -->
-          <div class="slide">
-            <!-- Image -->
-            <a class="slide-img" href="#" aria-label="takes you to specific blog post">
-              <img src="src/assets/images/Logo_1.png" alt="blog post img">
-            </a>
-
-            <!-- Info -->
-            <div class="slide-info">
-              <h1>title</h1>
-              <h2>author</h2>
-              <h3>date when written</h3>
-              <h4>content</h4>
-
-              <!-- Read Btn -->
-              <button class="pri-btn">read more</button>
-            </div>
-          </div>
+          <!-- Carousel - Posts -->
+          <div id="js-slides-container" class="slides-container"></div>
 
           <!-- Carousel Btns - Next -->
           <button class="carousel-arrow-btns right">
@@ -110,53 +58,69 @@
           </button>
         </article>
 
-        <article class="carousel-nav">
-          <button class="carousel-indicator active"></button>
-          <button class="carousel-indicator"></button>
-          <button class="carousel-indicator"></button>
-        </article>
+        <div class="carousel-nav"></div>
       </section>
       <!-- CAROUSEL - END -->
-
-
-      <!-- CATEGORY - START -->
-      <section class="categories" aria-label="popular categories from the blog">
-        <article class="cat-container">
-          <div class="cat-title"><h2>popular categories</h2></div>
-
-          <div class="cat-list">
-            <div class="category">
-              <h3>design</h3>
-            </div>
-  
-            <div class="category">
-              <h3>programming</h3>
-            </div>
-  
-            <div class="category">
-              <h3>technology</h3>
-            </div>
-          </div>
-        </article>
-      </section>
-      <!-- CATEGORY END -->
 
 
       <!-- ABOUT START -->
       <section class="about-section" aria-label="info about company">
         <article class="about-us">
-          <img class="about-img" src="src/assets/images/Logo_2.png" alt="profile-img">
+          <div>
+            <h2>about us</h2>
+          </div>
+          <div>
+            <p>Welcome to our little slice of Norway! 
+              We're a team of explorers, curious about all the quirks 
+              and laughs that make Norway so unique. Whether it's surviving 
+              a julebord with way too much aquavit, or getting our ice cream 
+              stolen by a seagull, we're here to share the hilarious 
+              side of Norwegian life.</p>
 
-          <div class="about-text">
-            <h4>Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-            Dolorem maiores exercitationem voluptatibus, beatae repellat 
-            doloremque necessitatibus voluptatum cumque quos ipsam asperiores 
-            ducimus veniam eos iure sunt! Eveniet ea atque voluptatem?</h4>
-            <button class="pri-btn">read more</button>
+            <p>Grab a snack, maybe a coffee, and follow along as we explore 
+              the wonders and laughs of Norway.</p>
+            <p>We promise it'll be a fun ride! <a href="#">Read More</a></p> 
           </div>
         </article>
       </section>
       <!-- ABOUT END -->
+
+      
+      <!-- BLOGS START -->
+      <section class="blogs-section" aria-label="blogs">
+        <div>
+          <h2>latest blogs</h2>
+        </div>
+
+        <article class="blog-filters">
+          <div class="filter-tags">
+            <div class="sort-form-box-title">
+              <i class="fa-solid fa-filter"></i>
+              <h4>filter by:</h4>
+            </div>
+            <form action="" class="sort-form" aria-label="sort blogs">
+              <select name="sort by tags" id="js-sort-by">
+                <option value="all">all</option>
+                <option value="spr">spring</option>
+                <option value="sum">summer</option>
+                <option value="aut">autumn</option>
+                <option value="win">winter</option>
+              </select>
+            </form>
+          </div>
+
+          <button class="search-btn" aria-label="search for blog posts">
+            <i class="fa-solid fa-magnifying-glass"></i>
+            <p>search</p>
+          </button>
+        </article>
+      </section>
+
+
+      <section id="js-posts"></section>
+
+      <section id="js-pagination"></section>
+      <!-- BLOGS END -->
 
 
       <!-- NEWSLETTER START -->
@@ -179,27 +143,6 @@
         </article>
       </section>
       <!-- NEWSLETTER END -->
-
-      <!-- GALLERY START -->
-       <section class="gallery">
-        <article class="gallery-container">
-          <div class="gallery-title"><h2>our gallery</h2></div>
-
-          <div class="gallery-list">
-            <div class="gallery-item">
-              <img src="src/assets/images/Logo_1.png" alt="gallery img">
-            </div>
-
-            <div class="gallery-item">
-              <img src="src/assets/images/Logo_2.png" alt="gallery img">
-            </div>
-
-            <div class="gallery-item">
-              <img src="src/assets/images/Logo_1.png" alt="gallery img">
-            </div>
-          </div>
-        </article>
-       </section>
     </main>
 
     <!-- FOOTER START -->

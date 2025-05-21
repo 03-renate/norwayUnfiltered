@@ -1,4 +1,4 @@
-//This code comes from the js-project, created by/taken from Monde Sineke
+//This code is created by/taken from Monde Sineke
 
 import { dirname, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
@@ -8,16 +8,23 @@ const __dirname = dirname(fileURLToPath(import.meta.url));
 
 // https://vitejs.dev/config/
 export default defineConfig({
+  resolve: {
+    alias: {
+      "@": resolve(__dirname, "src")
+    }
+  },
   build: {
     rollupOptions: {
       input: {
         main: resolve(__dirname, "index.html"),
-        signup: resolve(__dirname, "signUp.html"),
-        login: resolve(__dirname, "login.html")
+        signup: resolve(__dirname, "signup.html"),
+        login: resolve(__dirname, "login.html"),
+        post: resolve(__dirname, "post.html"),
       },
     },
   },
   server: {
     host: "0.0.0.0",
+    open: true
   },
 });

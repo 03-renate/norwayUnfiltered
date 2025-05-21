@@ -1,10 +1,10 @@
 /*FOOTER - Start*/
 .footer{
     width: 100%;
-    margin-top: 50px;
     display: flex;
     flex-direction: column;
     align-items: center;
+    text-align: center;
     background-color: var(--color-dark-bg);
     padding: 20px;
 }
@@ -13,30 +13,12 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 3rem;
-}
-
-.footer-logos{
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 1rem;
-}
-
-.footer-logos img{
-  width: 150px;
-  height: 150px;
-}
-
-.footer-social-media ul{
-  display: flex;
-  gap: 1rem;
 }
 
 .footer-links{
   display: flex;
   flex-wrap: wrap;
-  gap: 2rem;
+  gap: 5rem;
   text-transform: capitalize;
 }
 

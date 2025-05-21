@@ -7,6 +7,7 @@
     justify-content: center;
     height: 40px;
     width: auto;
+    max-width: 150px;
     border: none;
     border-radius: var(--border-radius);
     padding: 0.6em 1.2em;
@@ -26,7 +27,8 @@
     justify-content: center;
     height: 40px;
     width: auto;
-    border-width: 0.2rem;
+    max-width: 150px;
+    border-width: 2px;
     border-radius: var(--border-radius);
     border-color: var(--color-button);
     padding: 0.6em 1.2em;
@@ -40,17 +42,14 @@
 }
 
 
-/* Carousel - buttons */
-
+/* Carousel - arrow buttons */
 .carousel-arrow-btns{
-    border: 3px solid var(--color-button);
+    border: 2px solid var(--color-button);
     border-radius: 50%;
     width: 40px;
     height: 40px;
-    margin: 0 0.5rem 0;
     display: flex;
     align-items: center;
-    justify-content: center;
     background-color: transparent;
     cursor: pointer;
     transition: background-color 200ms ease;
@@ -63,30 +62,30 @@
     font-size: var(--font-size-h3);
 }
 
+/* Carousel - buttons */
 .carousel-nav{
     display: flex;
-    padding-top: 10px;
-}
+    align-items: center;
+    justify-content: center;
 
-.carousel-indicator{
-    margin: 0 3px;
+    width: 15px;
     height: 15px;
-    width: 50px;
-    border: 2px solid var(--color-button);
-    background-color: transparent;
+    margin: 0 5px;
+    border-radius: 50%;
+    border: none;
+    outline: none;
+    opacity: 0.7;
+    transition: opacity 0.3s;
+    background-color: var(--color-button);
     cursor: pointer;
 }
 
-.carousel-indicator.active{
-    background-color: var(--color-button);
-}
-
-.carousel-nav button:hover{
-    background-color: var(--color-button);
+.carousel-nav.active{
+    opacity: 1;
 }
 
 
-/* HOVER Effects */
+/* GENERAL HOVER Effects */
 .pri-btn:hover, .sec-btn:hover, .carousel-arrow-btns:hover{
     transform: scale(1.1);
     box-shadow: var(--box-shadow-hover);
