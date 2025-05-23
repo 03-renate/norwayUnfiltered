@@ -28,17 +28,6 @@ function createHeader() {
           <li>
           ${
             isLoggedIn
-              ? "Hello, User!"
-              : `<a href="login.html" aria-label="log in">
-              <button class="sec-btn">log in</button>
-            </a>`
-          }
-            
-          </li>
-
-          <li>
-          ${
-            isLoggedIn
               ? `<button class="pri-btn" id="js-sign-out">Sign out</button>`
               : `<a href="/signUp.html" aria-label="sign up new account">
               <button class="pri-btn">sign up</button>

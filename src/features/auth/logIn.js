@@ -1,3 +1,7 @@
+/*This code display the blog post page.
+It is inspired from previous classes with Monde Sineke
+*/
+
 import { API_LOG_URL } from "../../config/apiConfig";
 
 const formElement = document.querySelector("#js-login-form");

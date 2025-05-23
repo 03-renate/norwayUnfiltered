@@ -1,21 +1,21 @@
-//This code is responsible for the footer of the application. 
-// It contains the logo and the navigation bar.
+//This code is responsible for the footer of the application.
+//It's duplicated code from header.js file.
 
-addEventListener('DOMContentLoaded', () => {
-    const footer = document.getElementById('js-footer');
-    if(!footer){
-        alert('Element with ID js-footer not found in DOM!');
-        return;
-    }
+addEventListener("DOMContentLoaded", () => {
+  const footer = document.getElementById("js-footer");
+  if (!footer) {
+    alert("Element with ID js-footer not found in DOM!");
+    return;
+  }
 
-    footer.appendChild(createFooter());
+  footer.appendChild(createFooter());
 });
 
 function createFooter() {
-    const footer = document.createElement('footer');
-    footer.id = 'footer';
-    footer.className = 'footer';
-    footer.innerHTML = `
+  const footer = document.createElement("footer");
+  footer.id = "footer";
+  footer.className = "footer";
+  footer.innerHTML = `
             <div class="footer-links">
                 <div>
                     <h5>company</h5>
@@ -76,5 +76,5 @@ function createFooter() {
         <h6>© 2025 NorwayUnfiltered. All rights reserved.</h6>
       </article>`;
 
-      return footer;
+  return footer;
 }

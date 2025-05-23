@@ -8,7 +8,13 @@ import { API_URL, accessToken, apiKey } from "@/config/apiConfig.js";
 
 const containerElement = document.querySelector("#js-posts");
 const sortByElement = document.querySelector("#js-sort-by");
+const paginationElement = document.querySelector("#js-pagination");
+const pageInfo = document.querySelector("#js-pagination-page-info");
+const postsPerPage = 6;
+const maxPageButtons = 3;
 let posts = [];
+let currentPage = 1;
+let totalPages = 1;
 
 // CHECK IF containerElement EXIST IN THE DOM
 if (!containerElement || !sortByElement) {
@@ -80,12 +86,12 @@ function itemTemplate({ title, imageURL, imageAlt, tag, id }) {
 
   const editButton = `<div class="item-actions">
         <a href="post.html?id=${id}">
-            <button class="pri-btn">edit</button>
+            <button class="edit-btn"><i class="fa-solid fa-pen-to-square"></i> edit</button>
         </a>
     </div>`;
 
   const deleteButton = `<div class="item-actions">
-        <button class="pri-btn">Delete</button>
+        <button class="del-btn"><i class="fa-solid fa-trash-can"></i> delete</button>
     </div>`;
 
   return `
@@ -105,10 +111,10 @@ function itemTemplate({ title, imageURL, imageAlt, tag, id }) {
             <a href="post.html?id=${id}">
                 <button class="pri-btn">read more</button>
             </a>
-        </div>
 
-        ${isAdmin ? editButton : ""}
-        ${isAdmin ? deleteButton : ""}
+            ${isAdmin ? editButton : ""}
+            ${isAdmin ? deleteButton : ""}
+        </div>
     </article>`;
 }
 

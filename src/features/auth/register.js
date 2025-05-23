@@ -1,3 +1,7 @@
+/*This code display the blog post page.
+It is inspired from previous classes with Monde Sineke
+*/
+
 import { API_REG_URL } from "../../config/apiConfig";
 
 const formElement = document.querySelector("#js-signup-form");

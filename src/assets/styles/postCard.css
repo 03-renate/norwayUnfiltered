@@ -84,6 +84,13 @@
   transform: translateY(-5px);
 }
 
+.item-actions{
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 3px;
+}
+
 .item-info{
     display: flex;
     align-items: center;
