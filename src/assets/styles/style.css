@@ -5,6 +5,7 @@
 @import "./index.css";
 @import "./carousel.css";
 @import "./postCard.css"; /*posts*/
+@import "./postPage.css"; /*posts page*/
 @import "./footer.css";
 
 
@@ -19,4 +20,9 @@ body{
   width: 100%;
   min-height: 100dvh;
   background-color: var(--color-light-bg);
+}
+
+img{
+  max-width: 800px;
+  width: 100%;
 }

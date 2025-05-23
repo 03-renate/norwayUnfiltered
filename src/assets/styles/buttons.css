@@ -85,8 +85,54 @@
 }
 
 
+/* Back Btn */
+.back-btn{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    height: 40px;
+    width: auto;
+    max-width: 150px;
+    border: none;
+    border-radius: var(--border-radius);
+    padding: 0.6em 1.2em;
+    font-family: var(--font-family-body);
+    font-size: var(--font-size-body);
+    text-transform: capitalize;
+    text-align: center;
+    color: var(--color-light-bg);
+    background-color: var(--color-button);
+    box-shadow: var(--box-shadow-base);
+    cursor: pointer;
+}
+
+
+/* Share Btn */
+.share-btn{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    height: 40px;
+    width: auto;
+    max-width: 150px;
+    border: none;
+    border-radius: var(--border-radius);
+    padding: 0.6em 1.2em;
+    font-family: var(--font-family-body);
+    font-size: var(--font-size-body);
+    text-transform: capitalize;
+    text-align: center;
+    color: var(--color-light-bg);
+    background-color: var(--color-button);
+    box-shadow: var(--box-shadow-base);
+    cursor: pointer;
+}
+
+
 /* GENERAL HOVER Effects */
-.pri-btn:hover, .sec-btn:hover, .carousel-arrow-btns:hover{
+.pri-btn:hover, .sec-btn:hover, .carousel-arrow-btns:hover, .back-btn:hover, .share-btn:hover {
     transform: scale(1.1);
     box-shadow: var(--box-shadow-hover);
 }

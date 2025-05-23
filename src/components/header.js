@@ -1,21 +1,23 @@
-//This code is responsible for the header of the application. 
+//This code is responsible for the header of the application.
 // It contains the logo and the navigation bar.
 
-addEventListener('DOMContentLoaded', () => {
-    const navbar = document.getElementById('js-nav');
-    if(!navbar){
-        alert('Element with ID js-nav not found in DOM!');
-        return;
-    }
+addEventListener("DOMContentLoaded", () => {
+  const navbar = document.getElementById("js-nav");
+  if (!navbar) {
+    alert("Element with ID js-nav not found in DOM!");
+    return;
+  }
 
-    navbar.appendChild(createHeader());
+  navbar.appendChild(createHeader());
 });
 
 function createHeader() {
-    const nav = document.createElement('nav');
-    nav.id = 'navbar';
-    nav.className = 'nav';
-    nav.innerHTML = `
+  const isLoggedIn = localStorage.getItem("accessToken") !== null;
+  const nav = document.createElement("nav");
+  nav.id = "navbar";
+  nav.className = "nav";
+
+  nav.innerHTML = `
         <a class="navlogo" href="index.html" aria-label="home page">
           <span class="logo-icon"><i class="fa-solid fa-comments"></i></span>
           <span><h3>norway</h3></span>
@@ -24,17 +26,36 @@ function createHeader() {
 
         <ul>
           <li>
-            <a href="login.html" aria-label="log in">
+          ${
+            isLoggedIn
+              ? "Hello, User!"
+              : `<a href="login.html" aria-label="log in">
               <button class="sec-btn">log in</button>
-            </a>
+            </a>`
+          }
+            
           </li>
 
           <li>
-            <a href="signUp.html" aria-label="sign up new account">
+          ${
+            isLoggedIn
+              ? `<button class="pri-btn" id="js-sign-out">Sign out</button>`
+              : `<a href="/signUp.html" aria-label="sign up new account">
               <button class="pri-btn">sign up</button>
-            </a>
+            </a>`
+          }
+            
           </li>
         </ul>`;
 
-      return nav;
+  const signOutButton = nav.querySelector("#js-sign-out");
+
+  if (signOutButton) {
+    signOutButton.addEventListener("click", () => {
+      localStorage.removeItem("accessToken"); // Remove the access token from local storage
+      window.location.href = "index.html"; // Refresh the page
+    });
+  }
+
+  return nav;
 }

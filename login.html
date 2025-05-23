@@ -7,25 +7,39 @@
 
     <title>WaveLength</title>
 
-    <meta name="description" content="">
-    <meta name="keywords" content="blogs about programming, it trends for developers, how to stay updated in it">
-    <meta name="author" content="WaveLength">
+    <meta name="description" content="" />
+    <meta
+      name="keywords"
+      content="blogs about programming, it trends for developers, how to stay updated in it"
+    />
+    <meta name="author" content="WaveLength" />
 
     <!-- This is taken from google fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap" rel="stylesheet">
-    
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap"
+      rel="stylesheet"
+    />
+
     <!-- Fav Icon -->
-    <link rel="icon" type="image/icon" href="src/assets/images/tower-broadcast-solid.svg"/>
+    <link
+      rel="icon"
+      type="image/icon"
+      href="src/assets/images/tower-broadcast-solid.svg"
+    />
 
     <!-- CSS -->
-    <link rel="stylesheet" href="src/assets/styles/style.css">
-    
+    <link rel="stylesheet" href="src/assets/styles/style.css" />
+
     <!-- Fontawesome -->
-    <script src="https://kit.fontawesome.com/49c1127b94.js" crossorigin="anonymous"></script>
+    <script
+      src="https://kit.fontawesome.com/49c1127b94.js"
+      crossorigin="anonymous"
+    ></script>
 
     <!-- JS -->
+    <script type="module" src="src/features/auth/logIn.js" defer></script>
   </head>
 
   <body class="auth-body">
@@ -34,27 +48,39 @@
         <div id="login-form" class="auth-form-container">
           <h2>log in</h2>
 
-          <form action="#" id="login">
-
+          <form action="#" id="js-login-form">
             <!-- email -->
             <div>
               <label for="email"><i class="fa-regular fa-envelope"></i></label>
-              <input required type="email" name="email" id="email" placeholder="@noroff.stud.no">
+              <input
+                required
+                type="email"
+                name="email"
+                id="email"
+                placeholder="@noroff.stud.no"
+              />
             </div>
 
             <!-- password -->
             <div>
               <label for="pwrd"><i class="fa-solid fa-lock"></i></label>
-              <input type="password" name="password" id="pwrd" placeholder="password">
+              <input
+                type="password"
+                name="password"
+                id="pwrd"
+                placeholder="password"
+              />
             </div>
+
+            <div class="auth-form-footer">
+              <p>don't have an account?</p>
+              <a href="signUp.html">sign up</a>
+            </div>
+
+            <button type="submit" class="pri-btn">log in</button>
+
+            <div id="js-validation"></div>
           </form>
-
-          <div class="auth-form-footer">
-            <p>don't have an account?</p>
-            <a href="signUp.html">sign up</a>
-          </div>
-
-          <button type="submit" class="pri-btn">log in</button>
         </div>
       </div>
     </main>
