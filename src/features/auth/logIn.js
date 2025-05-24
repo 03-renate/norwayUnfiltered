@@ -2,7 +2,7 @@
 It is inspired from previous classes with Monde Sineke
 */
 
-import { API_LOG_URL } from "../../config/apiConfig";
+import { API_LOG_URL } from "src/config/apiConfig";
 
 const formElement = document.querySelector("#js-login-form");
 const validationElement = document.querySelector("#js-validation");

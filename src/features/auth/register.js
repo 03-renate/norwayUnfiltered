@@ -2,7 +2,7 @@
 It is inspired from previous classes with Monde Sineke
 */
 
-import { API_REG_URL } from "../../config/apiConfig";
+import { API_REG_URL } from "src/config/apiConfig";
 
 const formElement = document.querySelector("#js-signup-form");
 

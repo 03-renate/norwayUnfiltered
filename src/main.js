@@ -3,18 +3,12 @@ It is inspired from previous classes with Monde Sineke and taken from the js-pro
 ByteByteGo, link https://www.youtube.com/watch?v=14K_a2kKTxU 
 */
 
-import { createHTML, clearNode } from "@/utils.js";
-import { API_URL, accessToken, apiKey } from "@/config/apiConfig.js";
+import { createHTML, clearNode } from "src/utils.js";
+import { API_URL, accessToken, apiKey } from "src/config/apiConfig.js";
 
 const containerElement = document.querySelector("#js-posts");
 const sortByElement = document.querySelector("#js-sort-by");
-const paginationElement = document.querySelector("#js-pagination");
-const pageInfo = document.querySelector("#js-pagination-page-info");
-const postsPerPage = 6;
-const maxPageButtons = 3;
 let posts = [];
-let currentPage = 1;
-let totalPages = 1;
 
 // CHECK IF containerElement EXIST IN THE DOM
 if (!containerElement || !sortByElement) {
@@ -82,10 +76,11 @@ function renderPosts(items) {
 
 // FUNCTION - CREATING TEMPLATES FOR THE ITEMS
 function itemTemplate({ title, imageURL, imageAlt, tag, id }) {
-  const isAdmin = true;
+  const isAdmin = false; // Replace with actual admin check logic
+  // Example: const isAdmin = localStorage.getItem("isAdmin") === "true";
 
   const editButton = `<div class="item-actions">
-        <a href="post.html?id=${id}">
+        <a href="newPost.html?id=${id}">
             <button class="edit-btn"><i class="fa-solid fa-pen-to-square"></i> edit</button>
         </a>
     </div>`;

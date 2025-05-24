@@ -4,8 +4,8 @@ CodingNepal, link: https://www.youtube.com/watch?v=LC9LkDXkn6k&list=PLpwngcHZlPa
 Dudley Storey, link: https://codepen.io/dudleystorey/pen/DvZjLz
 w3school, link: https://www.w3schools.com/howto/tryit.asp?filename=tryhow_js_slideshow */
 
-import { createHTML, clearNode } from "@/utils.js";
-import { API_URL, accessToken, apiKey } from "@/config/apiConfig.js";
+import { createHTML, clearNode } from "src/utils.js";
+import { API_URL, accessToken, apiKey } from "src/config/apiConfig.js";
 
 document.addEventListener("DOMContentLoaded", async () => {
   const carousel = document.querySelector("#js-carousel");
@@ -142,7 +142,7 @@ function setupNavigation(slidesContainer, dotsContainer, prevBtn, nextBtn) {
 
   dotsContainer.addEventListener("click", (event) => {
     if (event.target.classList.contains("carousel-nav")) {
-      currentIndex = parseInt(event.target.dataset.index, 10);
+      currentIndex = dots.indexOf(event.target);
       showSlide(currentIndex);
     }
   });

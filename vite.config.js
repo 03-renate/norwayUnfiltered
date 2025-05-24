@@ -1,4 +1,4 @@
-//This code is created by/taken from Monde Sineke
+//This code is created by and taken from Monde Sineke
 
 import { dirname, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
@@ -10,8 +10,8 @@ const __dirname = dirname(fileURLToPath(import.meta.url));
 export default defineConfig({
   resolve: {
     alias: {
-      "@": resolve(__dirname, "src")
-    }
+      src: resolve(__dirname, "src"),
+    },
   },
   build: {
     rollupOptions: {
@@ -25,6 +25,6 @@ export default defineConfig({
   },
   server: {
     host: "0.0.0.0",
-    open: true
+    open: true,
   },
 });
