@@ -1,3 +1,5 @@
 /signup    /signUp.html   200
 /login     /login.html    200
 /post      /post.html     200
+/newPost      /newPost.html     200
+

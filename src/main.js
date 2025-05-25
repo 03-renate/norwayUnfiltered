@@ -10,6 +10,7 @@ import { API_URL, accessToken, apiKey } from "src/config/apiConfig.js";
 const containerElement = document.querySelector("#js-posts");
 const sortByElement = document.querySelector("#js-sort-by");
 const searchInput = document.querySelector("#js-search-input");
+const createBtn = document.querySelector("#js-create-post");
 let posts = [];
 
 // CHECK IF containerElement EXIST IN THE DOM
@@ -87,12 +88,17 @@ function renderPosts(items) {
 
 // CREATING TEMPLATES FOR THE POSTS - START
 function itemTemplate({ title, imageURL, imageAlt, tag, id }) {
-  const isAdmin = false; // Replace with actual admin check logic
-  // Example: const isAdmin = localStorage.getItem("isAdmin") === "true";
+  const isAdmin = true;
+
+  if (isAdmin) {
+    createBtn.classList.remove("hidden");
+  } else {
+    createBtn.classList.add("hidden");
+  }
 
   const editButton = `<div class="item-actions">
-        <a href="newPost.html?id=${id}">
-            <button class="edit-btn"><i class="fa-solid fa-pen-to-square"></i> edit</button>
+        <a href="updatePost.html?id=${id}">
+            <button id="js-edit-btn" class="edit-btn"><i class="fa-solid fa-pen-to-square"></i> edit</button>
         </a>
     </div>`;
 
@@ -103,7 +109,7 @@ function itemTemplate({ title, imageURL, imageAlt, tag, id }) {
   return `
     <article class="item-details">
         <div class="item-image">
-            <a href="/src/item.html?id=${id}" class="item-link">
+            <a href="/src/post.html?id=${id}" class="item-link">
                 <img src="${imageURL}" alt="${imageAlt}">
             </a>
         </div>

@@ -92,7 +92,7 @@ function renderCarousel(posts, slidesContainer, dotsContainer) {
 function createSlideTemplate({ title, author, media, tags, id }) {
   return `
         <div class="slide">
-            <a href="/src/item.html?id=${id}" class="slide-img">
+            <a href="/src/post.html?id=${id}" class="slide-img">
                 <img src="${media?.url}" alt="${media?.alt || "Post image"}">
             </a>
             <div class="slide-info">
