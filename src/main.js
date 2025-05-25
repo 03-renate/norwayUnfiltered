@@ -1,6 +1,7 @@
-/*This code displays the 12 blog posts. 
+/*This code displays the 12 blog posts.
 It is inspired from previous classes with Monde Sineke and taken from the js-project
-ByteByteGo, link https://www.youtube.com/watch?v=14K_a2kKTxU 
+ByteByteGo, link: https://www.youtube.com/watch?v=14K_a2kKTxU 
+Web Dev Simplified, link: https://www.youtube.com/watch?v=TlP5WIxVirU
 */
 
 import { createHTML, clearNode } from "src/utils.js";
@@ -8,6 +9,7 @@ import { API_URL, accessToken, apiKey } from "src/config/apiConfig.js";
 
 const containerElement = document.querySelector("#js-posts");
 const sortByElement = document.querySelector("#js-sort-by");
+const searchInput = document.querySelector("#js-search-input");
 let posts = [];
 
 // CHECK IF containerElement EXIST IN THE DOM
@@ -22,7 +24,15 @@ function setup() {
   getPosts();
 }
 
-// FUNCTION - FETCHES AND DISPLAYS POSTS
+// FUNCTION - PREPROCESS POSTS (i messed up the tags in my api. i created ["summer, spring"] instead of ["summer", "spring"], and i'm using this function to fix it)
+function preprocessPosts(posts) {
+  return posts.map((post) => ({
+    ...post,
+    tags: post.tags ? post.tags[0].split(",").map((tag) => tag.trim()) : [], // split tags and trim whitespace
+  }));
+}
+
+// FETCHES AND DISPLAYS POSTS - START
 async function getPosts() {
   try {
     const token = localStorage.getItem("accessToken") || accessToken;
@@ -48,13 +58,14 @@ async function getPosts() {
     }
 
     const responseData = await response.json();
-    posts = responseData.data || responseData;
+    posts = preprocessPosts(responseData.data || responseData);
     renderPosts(posts);
   } catch (error) {
     console.error("Error fetching posts:", error);
     alert("There was an error loading posts. Please try again later.");
   }
 }
+// FETCHES AND DISPLAYS POSTS - END
 
 // FUNCTION - RENDER POSTS
 function renderPosts(items) {
@@ -74,7 +85,7 @@ function renderPosts(items) {
   });
 }
 
-// FUNCTION - CREATING TEMPLATES FOR THE ITEMS
+// CREATING TEMPLATES FOR THE POSTS - START
 function itemTemplate({ title, imageURL, imageAlt, tag, id }) {
   const isAdmin = false; // Replace with actual admin check logic
   // Example: const isAdmin = localStorage.getItem("isAdmin") === "true";
@@ -112,30 +123,62 @@ function itemTemplate({ title, imageURL, imageAlt, tag, id }) {
         </div>
     </article>`;
 }
+// CREATING TEMPLATES FOR THE POSTS - END
 
-// EVENT LISTENER - SORTING PRODUCTS
+// FILTER BY TAGS - START
+const tagMap = {
+  all: "all",
+  spr: "spring",
+  sum: "summer",
+  aut: "autumn",
+  win: "winter",
+};
+
+// EVENT LISTENER - SORTING POSTS BY TAGS
 sortByElement.addEventListener("change", (event) => {
   const val = event.target.value;
+  let filteredPosts;
 
-  switch (val) {
-    case "all": // sorting products by price => low to high
-      products.sort((a, b) => a.price - b.price);
-      break;
-    case "spr": // sorting products by price => high to low
-      products.sort((a, b) => b.price - a.price);
-      break;
-    case "sum": // sorting products by recommendations => true to false
-      products.sort((a, b) => b.favorite - a.favorite);
-      break;
-    case "aut": // sorting products by recommendations => true to false
-      products.sort((a, b) => b.favorite - a.favorite);
-      break;
-    case "win": // sorting products by recommendations => true to false
-      products.sort((a, b) => b.favorite - a.favorite);
-      break;
-    default:
-      console.warn(`Unknown sort option: ${val}`);
+  if (!posts || posts.length === 0) {
+    alert("No posts available to sort.", error?.message);
+    return;
   }
 
-  renderProducts(products);
+  // Filter posts based on the selected tag
+  switch (val) {
+    case "all": // no sorting
+      filteredPosts = posts;
+      break;
+    case "spr": // sorting by spring
+    case "sum": // sorting by summer
+    case "aut": // sorting by autumn
+    case "win": // sorting by winter
+      const tag = tagMap[val];
+      filteredPosts = posts.filter(
+        (post) => Array.isArray(post.tags) && post.tags.includes(tagMap[val])
+      );
+      break;
+    default:
+      filteredPosts = posts; // default
+  }
+
+  renderPosts(filteredPosts);
 });
+// FILTER BY TAGS - END
+
+// SEARCH FUNCTIONALITY - START
+searchInput.addEventListener("input", handleSearch);
+
+// FUNCTION - HANDLE SEARCH INPUT
+function handleSearch() {
+  const query = searchInput.value.trim().toLowerCase();
+
+  const filteredPosts = posts.filter((post) => {
+    post.title.toLowerCase().includes(query) || //match title
+      (post.body && post.body.toLowerCase().includes(query)) || //match body
+      post.tags.some((tag) => tag.toLowerCase().includes(query)); //match tags
+  });
+
+  renderPosts(filteredPosts);
+}
+// SEARCH FUNCTIONALITY - END
