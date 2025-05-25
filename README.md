@@ -18,7 +18,7 @@ allowing users to browse, create, and manage blog posts.
 ---
 
 ## Project Assets
- - [Production Deploy]()
+ - [Production Deploy](https://norwayunfiltered.netlify.app/)
  - [Figma](https://www.figma.com/design/uYfCE9NLXflBmEqYBSYyhU/NorwayUnfiltered?node-id=1-4&t=2nDjnja7Shg1PS0h-1)
  - [API](https://docs.noroff.dev/docs/v2/blog/posts)
 
