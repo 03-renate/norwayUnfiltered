@@ -9,12 +9,13 @@ const __dirname = dirname(fileURLToPath(import.meta.url));
 // https://vitejs.dev/config/
 export default defineConfig({
   resolve: {
+    /* newly added */
     alias: {
       src: resolve(__dirname, "src"),
     },
   },
   build: {
-    outDir: "dist",
+    outDir: "dist" /* newly added */,
     rollupOptions: {
       input: {
         main: resolve(__dirname, "index.html"),
@@ -26,6 +27,6 @@ export default defineConfig({
   },
   server: {
     host: "0.0.0.0",
-    open: true,
+    open: true /* newly added */,
   },
 });
